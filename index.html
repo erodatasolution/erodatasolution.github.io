@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Ero Data Solutions</title>
+  </head>
+  <body class="bg-latar">
+    <nav class="border sticky top-0 backdrop-blur-xl bg-white/30 z-10">
+      <div
+        class="container flex items-center justify-between py-6 max-w-[1024px]"
+      >
+        <h3 class="font-bold text-birutua text-xl">Ero Data Solutions</h3>
+
+        <div class="relative" x-data="{open: false}">
+          <ion-icon
+            name="menu-sharp"
+            class="border p-3 text-lg rounded-md hover:cursor-pointer text-birutua md:hidden"
+            x-on:click="open = ! open"
+            @click.outside="open = false"
+          ></ion-icon>
+
+          <!-- Mobile Menu -->
+          <div
+            class="flex flex-col absolute right-0 bg-white border rounded-md py-3 md:hidden"
+            x-show="open"
+            x-transition
+          >
+            <span
+              class="hover:text-birutua hover:bg-hero hover:cursor-pointer px-5 py-2"
+              onclick="gotoPage('hero')"
+              >Beranda</span
+            >
+            <span
+              class="hover:text-birutua hover:bg-hero hover:cursor-pointer px-5 py-2"
+              onclick="gotoPage('about')"
+              >Tentang</span
+            >
+            <span
+              class="hover:text-birutua hover:bg-hero hover:cursor-pointer px-5 py-2"
+              onclick="gotoPage('order')"
+              >Order</span
+            >
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex md:gap-4 md:items-center">
+          <span
+            class="hover:text-birutua hover:cursor-pointer"
+            onclick="gotoPage('hero')"
+            >Beranda</span
+          >
+          <span
+            class="hover:text-birutua hover:cursor-pointer"
+            onclick="gotoPage('about')"
+            >Tentang</span
+          >
+          <span
+            class="hover:text-birutua hover:cursor-pointer"
+            onclick="gotoPage('order')"
+            >Order</span
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="hero" class="container max-w-[1024px] py-10">
+        <div
+          class="bg-hero rounded-[30px] p-5 md:flex md:justify-between md:items-center md:gap-4 md:px-9"
+        >
+          <div class="md:flex-1 md:flex md:ml-auto md:order-2">
+            <img src="./assets/img/hero.png" alt="hero-img" />
+          </div>
+
+          <div class="order md:flex-1 md:order-1">
+            <h3
+              class="text-birutua text-3xl font-extrabold my-3 md:text-5xl md:leading-[60px] md:m-0 md:mb-6"
+            >
+              Jasa Pembuatan Website Terjangkau Untuk UMKM
+            </h3>
+            <p class="font-normal text-biru md:text-lg">
+              Apakah anda memiliki bisinis UMKM dan memerlukan website untuk
+              meningkatkan kredibilitas dan professionalitas bisnis anda, tetapi
+              anda tidak memiliki cukup pengetahuan dan dana terbatas dalam
+              pengembangan website? Tenang ada kami "ERO Data Solutions" yang
+              akan mengerjakan pembuatan website anda.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="container text-center py-8">
+        <h3 class="text-birutua text-2xl font-extrabold my-5 md:text-2xl">
+          Tentang Kami
+        </h3>
+
+        <p class="text-biru md:text-lg mx-auto md:max-w-[768px]">
+          Di era serba digital sekarang ini, kebutuhan akan website sangat
+          dibutuhkan. Apalagi jika anda menjalankan sebuah bisnis baik sekala
+          menengah maupun UMKM, sebuah website sangat berperan penting untuk
+          meningkatkan professionalitas dari bisnis anda. Namun fakta dilapangan
+          masih banyak bisnis UMKM yang belum memiliki website dikarenakan
+          beberapa kendala yang mereka hadapi. Beberapa kendala tersebut
+          diantaranya adalah tidak memiliki kemampuan dalam hal pengembangan
+          website maupun dana yang terbatas untuk membayar jasa pembuatan
+          website. Dari fakta tersebut, kami tergerak untuk menyediakan jasa
+          pembuatan website landing page yang cukup terjangkau untuk para UMKM
+          yang ingin mengekspansi bisnis mereka
+        </p>
+      </section>
+
+      <section
+        id="benefit"
+        class="container flex flex-col gap-2 py-8 md:max-w-[1024px]"
+      >
+        <h3
+          class="text-birutua text-2xl font-extrabold my-5 md:text-2xl text-center"
+        >
+          Keuntungan Memiliki Website
+        </h3>
+
+        <div
+          x-data="{benefits: [{label: `Meningkatkan profesionalitas dan kredibilitas`, content: `Penggunaan website dapat meningkatkan kredibilitas bisnis dengan memberikan kesan profesional kepada calon konsumen. Ini dapat ditunjukkan melalui berbagai cara, namun yang paling umum dilakukan adalah menyematkan portofolio, penghargaan, sertifikat, serta testimoni pelanggan.`},{label:`Menjangkau target pasar yang lebih luas`, content: `Dibandingkan media tradisional atau offline, adanya website membantu bisnis untuk menjangkau target pasar yang lebih luas. Ini karena website bisa diakses oleh siapa pun di seluruh dunia. Selain itu, dengan strategi digital marketing yang tepat, bisnis dapat menargetkan audiens berdasarkan minat dan preferensi konsumen.`}, {label:`Meningkatkan kepercayaan calon konsumen`, content:`Manfaat website untuk bisnis selanjutnya adalah meningkatkan kepercayaan calon konsumen. Nah, salah satu terbaik untuk melakukannya adalah dengan mencantumkan berapa dan siapa saja yang telah menggunakan produk atau layanan.`},{label:`Konsumen lebih mudah mengenali produk`, content:`Melalui situs web, bisnis dapat menampilkan informasi rinci tentang produk atau layanan sehingga konsumen lebih mudah mengenali dan mengidentifikasi produk yang paling sesuai dengan kebutuhan mereka. Dalam hal ini, informasi yang dimaksud mencakup detail produk, gambar, spesifikasi, fitur, keunggulan, dan lain sebagainya.`}]}"
+          class="flex flex-col gap-2"
+        >
+          <template x-for="(data, idx) in benefits">
+            <div
+              class="collapse collapse-arrow bg-base-200 border rounded-none text-biru hover:bg-hero"
+            >
+              <input type="radio" name="my-accordion-2" />
+              <div
+                class="collapse-title text-lg font-medium"
+                x-text="data.label"
+              ></div>
+              <div class="collapse-content">
+                <p x-text="data.content"></p>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <section id="keunggulan" class="container">
+        <h3
+          class="text-birutua text-2xl font-extrabold my-5 md:text-2xl text-center"
+        >
+          Keunggulan Kami
+        </h3>
+
+        <div
+          x-data="{keunggulan: [{label: `Desain Disesuaikan`, desc:`Kami menyediakan berbagai macam desain template yang keren dan bisa di custom sesuai keinginan anda`}, {label: `SEO Teroptimasi`, desc:`Website anda akan terindeks di pencarian mesin pencari google`}, {label: `Revisi Desain`, desc:`Jika anda kurang puas dengan hasil website nya, kami memberikan kesempatan 1 kali untuk melakukan revisi desain`}]}"
+          class="md:flex md:gap-2 md:max-w-[768px] mx-auto"
+        >
+          <template x-for="(data, idx) in keunggulan">
+            <div
+              class="border-[1px] border-biru rounded-sm text-center p-8 md:p-5 mb-2 flex flex-col gap-6 items-center md:flex-1"
+            >
+              <ion-icon
+                name="checkmark-sharp"
+                class="text-birutua text-[46px] font-extrabold"
+              ></ion-icon>
+              <h5
+                x-text="data.label"
+                class="text-birutua text-lg font-bold"
+              ></h5>
+              <p x-text="data.desc"></p>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <section id="order" class="container max-w-[1024px] pt-[80px] pb-[20px]">
+        <div
+          class="bg-birutua rounded-[30px] p-5 md:flex md:justify-between md:items-center md:gap-4 md:px-9"
+        >
+          <div class="order md:flex-1 md:order-2">
+            <h3
+              class="text-latar text-lg font-extrabold my-3 md:text-4xl md:leading-[60px] md:m-0 md:mb-6"
+            >
+              Ayo Tunggu Apalagi Segera Lakukan Pemesanan !!
+            </h3>
+
+            <a
+              href="https://wa.me/6285179926811?text=Hallo%20EroDataSolution%20saya%20berminat%20untuk%20pembuatan%20website%20landing%20page"
+              class="btn bg-latar hover:bg-latar outline-none border-none mt-2"
+              >Pesan Sekarang
+              <ion-icon
+                name="logo-whatsapp"
+                class="text-green-600 text-xl"
+              ></ion-icon
+            ></a>
+          </div>
+          <div class="md:flex-1 md:flex md:ml-auto md:order-1">
+            <img src="./assets/img/order.png" alt="hero-img" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border p-5 bg-hero">
+      <p class="text-center">
+        Copyright &copy; <span id="year">2024</span> - Ero Data Solutions
+      </p>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+
+      function gotoPage(params) {
+        var element = document.getElementById(params);
+        var headerOffset = 60;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
