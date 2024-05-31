@@ -28,24 +28,26 @@
     />
     <title>Ero Data Solution</title>
   </head>
-  <body class="bg-latar">
+  <body class="bg-latar dark:bg-slate-800">
     <nav class="border sticky top-0 backdrop-blur-xl bg-white/30 z-10">
       <div
         class="container flex items-center justify-between py-6 max-w-[1024px]"
       >
-        <h3 class="font-bold text-birutua text-xl">Ero Data Solutions</h3>
+        <h3 class="font-bold text-birutua text-xl order-2 md:order-1">
+          Ero Data Solution
+        </h3>
 
-        <div class="relative" x-data="{open: false}">
+        <div class="relative md:hidden order-1" x-data="{open: false}">
           <ion-icon
             name="menu-sharp"
-            class="border p-3 text-lg rounded-md hover:cursor-pointer text-birutua md:hidden"
+            class="border p-3 text-lg rounded-md hover:cursor-pointer text-birutua"
             x-on:click="open = ! open"
             @click.outside="open = false"
           ></ion-icon>
 
           <!-- Mobile Menu -->
           <div
-            class="flex flex-col absolute right-0 bg-white border rounded-md py-3 md:hidden"
+            class="flex flex-col absolute left-0 bg-white border rounded-md py-3"
             x-show="open"
             x-transition
           >
@@ -68,22 +70,31 @@
         </div>
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex md:gap-4 md:items-center">
-          <span
-            class="hover:text-birutua hover:cursor-pointer"
-            onclick="gotoPage('hero')"
-            >Beranda</span
-          >
-          <span
-            class="hover:text-birutua hover:cursor-pointer"
-            onclick="gotoPage('about')"
-            >Tentang</span
-          >
-          <span
-            class="hover:text-birutua hover:cursor-pointer"
-            onclick="gotoPage('order')"
-            >Order</span
-          >
+        <div class="order-3 flex items-center gap-4">
+          <div class="hidden md:flex md:gap-4 md:items-center">
+            <span
+              class="hover:text-birutua hover:cursor-pointer"
+              onclick="gotoPage('hero')"
+              >Beranda</span
+            >
+            <span
+              class="hover:text-birutua hover:cursor-pointer"
+              onclick="gotoPage('about')"
+              >Tentang</span
+            >
+            <span
+              class="hover:text-birutua hover:cursor-pointer"
+              onclick="gotoPage('order')"
+              >Order</span
+            >
+          </div>
+
+          <label class="ui-switch">
+            <input type="checkbox" id="darktoggle" />
+            <div class="slider">
+              <div class="circle"></div>
+            </div>
+          </label>
         </div>
       </div>
     </nav>
@@ -224,7 +235,7 @@
 
     <footer class="border p-5 bg-hero">
       <p class="text-center">
-        Copyright &copy; <span id="year">2024</span> - Ero Data Solutions
+        Copyright &copy; <span id="year">2024</span> - Ero Data Solution
       </p>
     </footer>
 
@@ -241,21 +252,6 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
 
-    <script>
-      document.getElementById("year").innerHTML = new Date().getFullYear();
-
-      function gotoPage(params) {
-        var element = document.getElementById(params);
-        var headerOffset = 60;
-        var elementPosition = element.getBoundingClientRect().top;
-        var offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
-    </script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
