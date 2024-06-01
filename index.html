@@ -13,6 +13,7 @@
     />
     <meta name="author" content="Ero Data Solution" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/darkmode.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,16 +39,17 @@
         </h3>
 
         <div class="relative md:hidden order-1" x-data="{open: false}">
-          <ion-icon
-            name="menu-sharp"
-            class="border p-3 text-lg rounded-md hover:cursor-pointer text-birutua"
+          <div
+            class="border p-2 text-lg rounded-md hover:cursor-pointer"
             x-on:click="open = ! open"
             @click.outside="open = false"
-          ></ion-icon>
+          >
+            <img src="./assets/img/menu.svg" alt="menu" width="20px" />
+          </div>
 
           <!-- Mobile Menu -->
           <div
-            class="flex flex-col absolute left-0 bg-white border rounded-md py-3"
+            class="flex flex-col absolute left-0 top-[110%] bg-white border rounded-md py-3"
             x-show="open"
             x-transition
           >
@@ -105,7 +107,7 @@
           class="bg-hero rounded-[30px] p-5 md:flex md:justify-between md:items-center md:gap-4 md:px-9"
         >
           <div class="md:flex-1 md:flex md:ml-auto md:order-2">
-            <img src="./assets/img/hero.png" alt="hero-img" />
+            <img src="./assets/img/hero.webp" alt="hero-img" />
           </div>
 
           <div class="order md:flex-1 md:order-1">
@@ -191,10 +193,10 @@
             <div
               class="border-[1px] border-biru rounded-sm text-center p-8 md:p-5 mb-2 flex flex-col gap-6 items-center md:flex-1"
             >
-              <ion-icon
-                name="checkmark-sharp"
-                class="text-birutua text-[46px] font-extrabold"
-              ></ion-icon>
+              <div>
+                <img src="./assets/img/check.svg" alt="check" width="42px" />
+              </div>
+
               <h5
                 x-text="data.label"
                 class="text-birutua text-lg font-bold"
@@ -220,14 +222,12 @@
               href="https://wa.me/6285179926811?text=Hallo%20EroDataSolution%20saya%20berminat%20untuk%20pembuatan%20website%20landing%20page"
               class="btn bg-latar hover:bg-latar outline-none border-none mt-2"
               >Pesan Sekarang
-              <ion-icon
-                name="logo-whatsapp"
-                class="text-green-600 text-xl"
-              ></ion-icon
-            ></a>
+
+              <img src="./assets/img/wa.svg" alt="wa" width="20px" />
+            </a>
           </div>
           <div class="md:flex-1 md:flex md:ml-auto md:order-1">
-            <img src="./assets/img/order.png" alt="hero-img" />
+            <img src="./assets/img/order.webp" alt="hero-img" />
           </div>
         </div>
       </section>
@@ -240,18 +240,9 @@
     </footer>
 
     <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
-
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
